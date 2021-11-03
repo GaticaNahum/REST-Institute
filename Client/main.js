@@ -43,20 +43,19 @@ const getById = async id => {
 }
 
 const getInfo = async id => {
-    let person = await getById(id);
-    let date = new Date(person.person[0].created.date);
+    let school = await getById(id);
+    let date = new Date(school.school[0].created.date);
 
-    document.getElementById('name').value = person.person[0].name
-    document.getElementById('street').value = person.person[0].street
-    document.getElementById('status').value = person.person[0].status ? 'Activo' : 'Inactivo'
+    document.getElementById('name').value = school.school[0].name
+    document.getElementById('street').value = school.school[0].street
+    document.getElementById('status').value = school.school[0].status ? 'Activo' : 'Inactivo'
     document.getElementById('created').value = date.getDate() + "/" + date.getMonth() + "/" + date.getFullYear();
-    document.getElementById('updated').value = person.person[0].updated
 
-    if (person.person[0].updated == null) {
-        document.getElementById('updated').innerHTML = 'Aún sin actualizar';
+    if (school.school[0].updated == null) {
+        document.getElementById('updated').value = 'Aún sin actualizar';
     } else {
-        let dateUpdated = new Date(person.person[0].updated.date);
-        document.getElementById('updated').innerHTML = dateUpdated.getDate() + "/" + dateUpdated.getMonth() + "/" + dateUpdated.getFullYear();
+        let date2 = new Date(school.school[0].updated.date);
+        document.getElementById('updated').value = date2.getDate() + "/" + date2.getMonth() + "/" + date2.getFullYear();
     }
 
 }

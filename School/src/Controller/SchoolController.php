@@ -72,7 +72,7 @@ class SchoolController extends AbstractController
         $data = [
             'status'=> 200,
             'message' => 'Se encontro el producto',
-            'person' => $school
+            'school' => $school //->Importante ya que en el js cuando usamos el school.school[0], lo primer entre comillas simples es la variable
         ];
         return new JsonResponse($data);
     }
