@@ -1,0 +1,20 @@
+findAllPersons:
+   path: /
+   controller: App\Controller\SchoolController::findAllPersons
+
+createPerson:
+   path: /school/create
+   controller: App\Controller\SchoolController::createPerson
+
+updatePerson:
+   path: /school/update/{id}
+   controller: App\Controller\SchoolController::updatePerson
+
+delete_person:
+   path: /school/delete/{id}
+   controller: App\Controller\SchoolController::delete_person
+
+findById:
+   path: /school/{id}
+   controller: App\Controller\SchoolController::findById
+
